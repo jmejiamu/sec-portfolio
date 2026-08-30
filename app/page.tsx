@@ -1,35 +1,6 @@
-const projects = [
-  {
-    title: "App Security Audit Notes",
-    detail:
-      "OWASP checks, auth review, headers, input validation, and findings.",
-    tag: "WEB",
-  },
-  {
-    title: "Network Traffic Analysis",
-    detail: "Packet captures reviewed for DNS, ports, sessions, and anomalies.",
-    tag: "PCAP",
-  },
-  {
-    title: "Linux Hardening Lab",
-    detail:
-      "Users, services, firewall rules, SSH settings, and logging basics.",
-    tag: "LINUX",
-  },
-];
+import Link from "next/link";
 
-const skills = [
-  "Next.js",
-  "React Native",
-  "TypeScript",
-  "React",
-  "Linux",
-  "Networking",
-  // "Nmap",
-  // "Wireshark",
-  // "Burp Suite",
-  "OWASP Top 10",
-];
+import { labs, projects, skills } from "./data/portfolio";
 
 export default function Home() {
   return (
@@ -83,7 +54,7 @@ export default function Home() {
             </a>
             <a
               className="inline-flex min-h-12 items-center justify-center rounded border border-[#263241] bg-[#090D12] px-5 text-sm font-bold uppercase tracking-[0.12em] text-[#E6EDF3] transition hover:border-[#7dd3fc] hover:text-[#7dd3fc]"
-              href="https://github.com/"
+              href="https://github.com/jmejiamu"
               rel="noreferrer"
               target="_blank"
             >
@@ -127,8 +98,9 @@ export default function Home() {
           Projects
         </h1>
         {projects.map((project) => (
-          <article
-            className="rounded-lg border border-[#263241] bg-[#101720] p-5"
+          <Link
+            className="rounded-lg border border-[#263241] bg-[#101720] p-5 transition hover:border-[#7dd3fc]"
+            href={`/projects/${project.slug}`}
             key={project.title}
           >
             <div className="flex items-center justify-between gap-4">
@@ -142,35 +114,45 @@ export default function Home() {
             <p className="mt-4 text-sm leading-6 text-[#8B949E]">
               {project.detail}
             </p>
-          </article>
+            <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-[#39ff88]">
+              Read details
+            </p>
+          </Link>
         ))}
       </section>
 
-      <section className="mx-auto max-w-6xl pb-6">
+      <section className="mx-auto max-w-6xl pb-6" id="labs">
         <h1 className="mb-5 text-4xl font-black tracking-[0.08em] text-[#E6EDF3] sm:text-6xl">
           Labs
         </h1>
-        <article
-          className="rounded-lg border border-[#263241] bg-[#101720] p-5"
-          id="labs"
-        >
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#39ff88]">
-            Labs
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-[#E6EDF3]">
-            Security practice architecture
-          </h2>
-          <p className="mt-4 text-sm leading-7 text-[#8B949E]">
-            Keep every lab organized as a case study: objective, environment,
-            tools, commands, screenshots, findings, and lessons learned.
-          </p>
-          <div className="mt-5 rounded border border-[#263241] bg-[#090D12] p-4 text-sm text-[#8B949E]">
-            <p>
-              <span className="text-[#f59e0b]">warning:</span> replace sample
-              projects with real writeups as you complete them.
-            </p>
-          </div>
-        </article>
+        <p className="mb-5 max-w-3xl text-sm leading-7 text-[#8B949E]">
+          Smaller experiments that demonstrate one security concept at a time:
+          access control, reconnaissance, headers, logging, and hardening.
+        </p>
+        <div className="grid gap-5 md:grid-cols-3">
+          {labs.map((lab) => (
+            <Link
+              className="block rounded-lg border border-[#263241] bg-[#101720] p-5 transition hover:border-[#39ff88]"
+              href={`/labs/${lab.slug}`}
+              key={lab.title}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <h2 className="text-base font-bold text-[#E6EDF3]">
+                  {lab.title}
+                </h2>
+                <span className="rounded border border-[#263241] px-2 py-1 text-xs font-bold text-[#39ff88]">
+                  {lab.tag}
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-6 text-[#8B949E]">
+                {lab.detail}
+              </p>
+              <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-[#39ff88]">
+                View experiment
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
