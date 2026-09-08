@@ -38,16 +38,21 @@ export const projects = [
       "Severity-based threat classification.",
     ],
     demoResults: [
-      "Placeholder for screenshots of findings.",
-      "Placeholder for terminal output from checks.",
-      "Placeholder for before-and-after remediation notes.",
+      {
+        src: "/projects/arch.png",
+        alt: "React Native dashboard showing live SSH security events",
+      },
+      {
+        src: "/projects/dashboard.png",
+        alt: "React Native dashboard showing live SSH security events",
+      },
     ],
     learned: [
       "How Linux authentication logs can reveal suspicious activity.",
       "How to detect brute-force patterns from failed SSH attempts.",
       "How to turn raw logs into actionable security events.",
     ],
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/jmejiamu/ssh-intrusion-monitor-app",
   },
   // {
   //   slug: "network-traffic-analysis",

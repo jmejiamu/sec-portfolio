@@ -8,7 +8,10 @@ export type ProjectDetailItem = {
   architecture: string[];
   keyFeatures: string[];
   security: string[];
-  demoResults: string[];
+  demoResults: {
+    src: string;
+    alt: string;
+  }[];
   learned: string[];
   githubUrl: string;
 };
@@ -165,8 +168,19 @@ export function ProjectDetail({ item }: ProjectDetailProps) {
       </Section>
 
       <Section title="Demo / Results">
-        <div className="rounded border border-[#263241] bg-[#090D12] p-4">
-          <BulletList items={item.demoResults} />
+        <div className="grid gap-5 md:grid-cols-2">
+          {item.demoResults.map((image) => (
+            <div
+              key={image.src}
+              className="rounded border border-[#263241] bg-[#090D12] p-3"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-auto w-full rounded"
+              />
+            </div>
+          ))}
         </div>
       </Section>
 
