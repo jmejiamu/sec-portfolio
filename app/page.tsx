@@ -121,7 +121,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="mx-auto max-w-6xl pb-6" id="labs">
+      {/* <section className="mx-auto max-w-6xl pb-6" id="labs">
         <h1 className="mb-5 text-4xl font-black tracking-[0.08em] text-[#E6EDF3] sm:text-6xl">
           Labs
         </h1>
@@ -153,7 +153,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
