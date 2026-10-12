@@ -52,74 +52,100 @@ export const projects = [
       "How to detect brute-force patterns from failed SSH attempts.",
       "How to turn raw logs into actionable security events.",
     ],
-    githubUrl: "https://github.com/jmejiamu/ssh-intrusion-monitor-app",
+    repositories: [
+      {
+        label: "Mobile Dashboard",
+        type: "frontend",
+        url: "https://github.com/jmejiamu/ssh-intrusion-monitor-app",
+        branch: "main",
+      },
+      {
+        label: "API",
+        type: "backend",
+        url: "https://github.com/jmejiamu/ssh-intrusion-monitor-api",
+        branch: "main",
+      },
+      {
+        label: "Raspberry Pi Monitor",
+        type: "monitor",
+        url: "https://github.com/jmejiamu/raspberry-pi-ssh-monitor",
+        branch: "main",
+      },
+    ],
   },
-  // {
-  //   slug: "network-traffic-analysis",
-  //   title: "Network Traffic Analysis",
-  //   detail: "Packet captures reviewed for DNS, ports, sessions, and anomalies.",
-  //   tag: "PCAP",
-  //   overview:
-  //     "I built a packet-analysis workflow for reviewing network captures and documenting suspicious patterns. The goal is to practice triage skills used in SOC and blue-team environments.",
-  //   techStack: ["Linux", "Bash", "Node.js", "React Native"],
-  //   architecture: ["Capture traffic", "Inspect packets", "Summarize activity"],
-  //   keyFeatures: [
-  //     "Host and conversation mapping.",
-  //     "DNS request review.",
-  //     "Port and protocol summary.",
-  //     "Short escalation notes for suspicious activity.",
-  //   ],
-  //   security: [
-  //     "DNS anomaly detection.",
-  //     "Unexpected port exposure review.",
-  //     "Suspicious connection triage.",
-  //   ],
-  //   demoResults: [
-  //     "Placeholder for Wireshark screenshots.",
-  //     "Placeholder for tcpdump command output.",
-  //     "Placeholder for traffic summary metrics.",
-  //   ],
-  //   learned: [
-  //     "Network context matters before calling traffic suspicious.",
-  //     "Short timelines make packet analysis easier to explain.",
-  //     "Clear summaries are as important as tool usage.",
-  //   ],
-  //   githubUrl: "https://github.com/",
-  // },
-  // {
-  //   slug: "linux-hardening-lab",
-  //   title: "Linux Hardening Project",
-  //   detail:
-  //     "Users, services, firewall rules, SSH settings, and logging basics.",
-  //   tag: "LINUX",
-  //   overview:
-  //     "I built a Linux hardening baseline for a small server-style environment. The project focuses on reducing unnecessary exposure and documenting secure configuration choices.",
-  //   techStack: ["Linux", "Bash", "Node.js", "React Native"],
-  //   architecture: ["Baseline host", "Harden config", "Verify logs"],
-  //   keyFeatures: [
-  //     "User and sudo access review.",
-  //     "Service inventory and cleanup.",
-  //     "Firewall rule documentation.",
-  //     "SSH configuration baseline.",
-  //   ],
-  //   security: [
-  //     "Least-privilege access review.",
-  //     "Attack surface reduction.",
-  //     "SSH hardening.",
-  //     "Authentication log review.",
-  //   ],
-  //   demoResults: [
-  //     "Placeholder for enabled firewall status.",
-  //     "Placeholder for service inventory output.",
-  //     "Placeholder for authentication log examples.",
-  //   ],
-  //   learned: [
-  //     "Hardening is a process of reducing unnecessary risk.",
-  //     "Verification matters after every configuration change.",
-  //     "Good documentation makes security changes repeatable.",
-  //   ],
-  //   githubUrl: "https://github.com/",
-  // },
+  {
+    slug: "nodejs-api-security-assessment",
+    title: "Node.js API Security Assessment & Remediation",
+    detail:
+      "Security assessment of an existing Node.js REST API, focusing on vulnerable dependencies, JWT authentication, and secure coding practices.",
+    tag: "CYBERSECURITY",
+    overview:
+      "An ongoing application security project focused on auditing a previously developed Node.js REST API. The assessment combines dependency vulnerability scanning, manual source code review, security documentation, and planned remediation and regression testing.",
+    techStack: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Knex.js",
+      "JWT",
+      "npm audit",
+      "Git",
+    ],
+    architecture: [
+      "Node.js REST API",
+      "Express Middleware",
+      "JWT Authentication",
+      "Knex.js",
+      "PostgreSQL Database",
+      "Security Audit Documentation",
+    ],
+    keyFeatures: [
+      "Dependency vulnerability scanning using npm audit.",
+      "Manual security review of JWT authentication middleware.",
+      "Documented findings with evidence and remediation recommendations.",
+      "Separate Git branches for the original code, security audit, and remediation.",
+      "Planned security regression testing and before-and-after comparisons.",
+    ],
+    security: [
+      "Identified a hardcoded JWT verification secret.",
+      "Identified third-party dependencies with known security advisories.",
+      "Reviewing JWT verification and authorization controls.",
+      "Assessing authentication and dependency security risks.",
+    ],
+    demoResults: [],
+    learned: [
+      "How to identify vulnerable dependencies using npm audit.",
+      "How hardcoded JWT secrets can compromise authentication security.",
+      "How to document security findings and recommend remediation.",
+      "How to organize a security assessment using separate Git branches.",
+    ],
+    repositories: [
+      {
+        label: "Original Backend",
+        type: "backend",
+        url: "https://github.com/jmejiamu/the-tech-blog-api",
+        branch: "main",
+      },
+      {
+        label: "Security Findings",
+        type: "audit",
+        url: "https://github.com/jmejiamu/the-tech-blog-api/tree/security/audit/security-audit",
+        branch: "security/audit",
+      },
+      // {
+      //   label: "Security Fixes",
+      //   type: "remediation",
+      //   url: "https://github.com/jmejiamu/the-tech-blog-api/tree/security/fixes",
+      //   branch: "security/fixes",
+      // },
+      // {
+      //   label: "Original Frontend",
+      //   type: "frontend",
+      //   url: "https://github.com/jmejiamu/the-tech-blog-frontend",
+      //   branch: "main",
+      // },
+    ],
+    status: "in-progress",
+  },
 ];
 
 export const labs = [

@@ -13,7 +13,13 @@ export type ProjectDetailItem = {
     alt: string;
   }[];
   learned: string[];
-  githubUrl: string;
+  repositories?: {
+    label: string;
+    type: string;
+    url: string;
+    branch?: string;
+  }[];
+  status?: string;
 };
 
 export type LabDetailItem = {
@@ -183,17 +189,29 @@ export function ProjectDetail({ item }: ProjectDetailProps) {
           ))}
         </div>
       </Section>
+      {item.status && (
+        <Section title="Status">
+          <p className="mt-4 text-sm font-semibold text-[#39ff88]">
+            Status: {item.status}
+          </p>
+        </Section>
+      )}
 
       <Section title="What I Learned">
         <BulletList items={item.learned.slice(0, 3)} />
-        <Link
-          className="mt-6 inline-flex min-h-11 items-center justify-center rounded border border-[#39ff88] bg-[#39ff88] px-4 text-xs font-bold uppercase tracking-[0.14em] text-[#090D12] transition hover:bg-transparent hover:text-[#39ff88]"
-          href={item.githubUrl}
-          rel="noreferrer"
-          target="_blank"
-        >
-          View GitHub
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          {item.repositories?.map((repo) => (
+            <a
+              key={`${repo.type}-${repo.branch ?? "default"}`}
+              href={repo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border px-4 py-2 hover:bg-neutral-100"
+            >
+              {repo.label} ↗
+            </a>
+          ))}
+        </div>
       </Section>
     </DetailShell>
   );
