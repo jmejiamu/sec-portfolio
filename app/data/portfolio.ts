@@ -165,39 +165,39 @@ export const labs = [
     resultTakeaway:
       "Remote access became more controlled, and the logs clearly showed why authentication monitoring matters.",
   },
-  {
-    slug: "nmap-service-scan",
-    title: "Nmap Service Scan",
-    detail:
-      "Scan a test host, identify open ports, and explain service exposure.",
-    tag: "RECON",
-    objective:
-      "Demonstrate how basic service discovery helps identify attack surface.",
-    tools: ["Nmap", "ss", "systemctl"],
-    vulnerability:
-      "Unknown open services can expose a host to unnecessary risk and make incident response harder.",
-    exploitTest:
-      "Scanned a known test host, recorded open ports, and compared results against locally running services.",
-    fix: "Stopped unneeded services and documented which ports should remain open for expected use.",
-    resultTakeaway:
-      "A simple scan can quickly reveal what a system exposes and what needs justification.",
-  },
-  {
-    slug: "security-headers-check",
-    title: "Security Headers Check",
-    detail: "Review browser-facing headers and note missing protections.",
-    tag: "WEB",
-    objective:
-      "Demonstrate how browser security headers reduce common client-side risk.",
-    tools: ["curl", "DevTools", "Security headers"],
-    vulnerability:
-      "Missing headers can weaken protections around transport security, framing, content loading, and browser behavior.",
-    exploitTest:
-      "Requested the local app with curl and inspected response headers in browser developer tools.",
-    fix: "Documented recommended headers such as Content-Security-Policy, X-Frame-Options, and Referrer-Policy.",
-    resultTakeaway:
-      "Header review is a small check, but it gives fast visibility into basic web hardening.",
-  },
+  // {
+  //   slug: "nmap-service-scan",
+  //   title: "Nmap Service Scan",
+  //   detail:
+  //     "Scan a test host, identify open ports, and explain service exposure.",
+  //   tag: "RECON",
+  //   objective:
+  //     "Demonstrate how basic service discovery helps identify attack surface.",
+  //   tools: ["Nmap", "ss", "systemctl"],
+  //   vulnerability:
+  //     "Unknown open services can expose a host to unnecessary risk and make incident response harder.",
+  //   exploitTest:
+  //     "Scanned a known test host, recorded open ports, and compared results against locally running services.",
+  //   fix: "Stopped unneeded services and documented which ports should remain open for expected use.",
+  //   resultTakeaway:
+  //     "A simple scan can quickly reveal what a system exposes and what needs justification.",
+  // },
+  // {
+  //   slug: "security-headers-check",
+  //   title: "Security Headers Check",
+  //   detail: "Review browser-facing headers and note missing protections.",
+  //   tag: "WEB",
+  //   objective:
+  //     "Demonstrate how browser security headers reduce common client-side risk.",
+  //   tools: ["curl", "DevTools", "Security headers"],
+  //   vulnerability:
+  //     "Missing headers can weaken protections around transport security, framing, content loading, and browser behavior.",
+  //   exploitTest:
+  //     "Requested the local app with curl and inspected response headers in browser developer tools.",
+  //   fix: "Documented recommended headers such as Content-Security-Policy, X-Frame-Options, and Referrer-Policy.",
+  //   resultTakeaway:
+  //     "Header review is a small check, but it gives fast visibility into basic web hardening.",
+  // },
 ];
 
 export const skills = [
